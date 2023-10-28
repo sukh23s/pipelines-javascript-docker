@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sukhspipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sukhspipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: sukhspipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: sukhspipelinesjavascriptdocker 
+          image: mycontainerregistrysukh.azurecr.io/sukhspipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
